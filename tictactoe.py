@@ -8,7 +8,7 @@ def tictactoe():
     print('Welcome to the TicTacToe game!')
     print('In order to make your moves, please follow the positional map below:')
     print_game(sample)
-    player = 'x';
+    player = 'x'
     while(1):
         print(player, "'s turn")
         user_input = input('Provide move:')

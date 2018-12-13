@@ -18,23 +18,46 @@ class Stack():
             return False
         
 s = Stack()
-exp = input('Please enter the paranthesis:')
-for i in exp:
+
+userIn1 = input('Please provide paranthesis:')
+counter = 0
+
+for i in userIn1:
     if i == '(':
         s.push(1)
+        counter += 1
     elif i == ')':
         if s.isEmpty():
-            s.push(1)
+            counter -= 1
         else:
             s.pop()
-            isBalanced = True
+            counter -= 1
     else:
-        if s.isEmpty():
-            isBalanced = True
-        else:
-            isBalanced = False
+        continue
 
-if s.isEmpty():
+if counter == 0:
     print('There are equal number of paranthesis')
 else:
     print('There are unequal number of paranthesis')
+        
+ns = Stack()
+userIn2 = input('Please provide html tags:')
+counter = 0
+
+for i in userIn2:
+    if i == '<':
+        ns.push(1)
+        counter += 1
+    elif i == '>':
+        if ns.isEmpty():
+            counter -= 1
+        else:
+            ns.pop()
+            counter -= 1
+    else:
+        continue
+
+if counter == 0:
+    print('There are equal number of html tags')
+else:
+    print('There are unequal number of html tags')
